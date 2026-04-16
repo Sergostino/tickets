@@ -1,0 +1,893 @@
+2026-02-05 20:10:58 - {"update_id":736463999,
+"message":{"message_id":15,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770311457,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736463999
+    [message] => Array
+        (
+            [message_id] => 15
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770311457
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 20:13:54 - 
+2026-02-05 20:17:25 - 
+2026-02-05 20:17:44 - 
+2026-02-05 20:17:59 - 
+2026-02-05 20:18:10 - {"update_id":736464000,
+"message":{"message_id":17,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770311890,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464000
+    [message] => Array
+        (
+            [message_id] => 17
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770311890
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 20:18:22 - 
+2026-02-05 20:18:24 - 
+2026-02-05 20:18:27 - 
+2026-02-05 20:19:03 - 
+2026-02-05 20:19:08 - 
+2026-02-05 20:19:13 - 
+2026-02-05 20:27:14 - 
+2026-02-05 20:27:24 - 
+2026-02-05 20:27:26 - 
+2026-02-05 20:27:56 - 
+2026-02-05 20:28:15 - 
+2026-02-05 20:28:43 - 
+2026-02-05 20:29:07 - {"update_id":736464001,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770312547,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0}}}
+Decoded: Array
+(
+    [update_id] => 736464001
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770312547
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+        )
+
+)
+
+2026-02-05 20:29:24 - {"update_id":736464002,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770312564,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"}}}
+Decoded: Array
+(
+    [update_id] => 736464002
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770312564
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+        )
+
+)
+
+2026-02-05 20:29:24 - {"update_id":736464003,
+"message":{"message_id":19,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770312564,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464003
+    [message] => Array
+        (
+            [message_id] => 19
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770312564
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 20:41:11 - {"update_id":736464004,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770313271,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0}}}
+Decoded: Array
+(
+    [update_id] => 736464004
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770313271
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+        )
+
+)
+
+2026-02-05 20:41:40 - {"update_id":736464005,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770313300,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"}}}
+Decoded: Array
+(
+    [update_id] => 736464005
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770313300
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+        )
+
+)
+
+2026-02-05 20:41:40 - {"update_id":736464006,
+"message":{"message_id":21,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770313300,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464006
+    [message] => Array
+        (
+            [message_id] => 21
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770313300
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 21:02:49 - {"update_id":736464007,
+"message":{"message_id":23,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770314569,"text":"/start webapp","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464007
+    [message] => Array
+        (
+            [message_id] => 23
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770314569
+            [text] => /start webapp
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 21:03:04 - {"update_id":736464008,
+"message":{"message_id":25,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770314584,"text":"/start webapp","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464008
+    [message] => Array
+        (
+            [message_id] => 25
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770314584
+            [text] => /start webapp
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 21:03:08 - {"update_id":736464009,
+"message":{"message_id":27,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770314588,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464009
+    [message] => Array
+        (
+            [message_id] => 27
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770314588
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 21:25:24 - {"update_id":736464010,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770315923,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0}}}
+Decoded: Array
+(
+    [update_id] => 736464010
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770315923
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+        )
+
+)
+
+2026-02-05 21:25:53 - {"update_id":736464011,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770315953,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"}}}
+Decoded: Array
+(
+    [update_id] => 736464011
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770315953
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+        )
+
+)
+
+2026-02-05 21:25:53 - {"update_id":736464012,
+"message":{"message_id":29,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770315953,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464012
+    [message] => Array
+        (
+            [message_id] => 29
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770315953
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+2026-02-05 22:02:09 - {"update_id":736464013,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770318128,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0}}}
+Decoded: Array
+(
+    [update_id] => 736464013
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770318128
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+        )
+
+)
+
+2026-02-05 22:02:30 - {"update_id":736464014,
+"my_chat_member":{"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"date":1770318150,"old_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"kicked","until_date":0},"new_chat_member":{"user":{"id":7737698135,"is_bot":true,"first_name":"Tickets","username":"TicketsNoteBot"},"status":"member"}}}
+Decoded: Array
+(
+    [update_id] => 736464014
+    [my_chat_member] => Array
+        (
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [date] => 1770318150
+            [old_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => kicked
+                    [until_date] => 0
+                )
+
+            [new_chat_member] => Array
+                (
+                    [user] => Array
+                        (
+                            [id] => 7737698135
+                            [is_bot] => 1
+                            [first_name] => Tickets
+                            [username] => TicketsNoteBot
+                        )
+
+                    [status] => member
+                )
+
+        )
+
+)
+
+2026-02-05 22:02:31 - {"update_id":736464015,
+"message":{"message_id":31,"from":{"id":1527954983,"is_bot":false,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","language_code":"ru","is_premium":true},"chat":{"id":1527954983,"first_name":"Sergei","last_name":"S.","username":"Samalazoff","type":"private"},"date":1770318150,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Decoded: Array
+(
+    [update_id] => 736464015
+    [message] => Array
+        (
+            [message_id] => 31
+            [from] => Array
+                (
+                    [id] => 1527954983
+                    [is_bot] => 
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [language_code] => ru
+                    [is_premium] => 1
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1527954983
+                    [first_name] => Sergei
+                    [last_name] => S.
+                    [username] => Samalazoff
+                    [type] => private
+                )
+
+            [date] => 1770318150
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+

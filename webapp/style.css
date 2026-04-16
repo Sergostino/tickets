@@ -1,0 +1,1637 @@
+:root {
+    /* Цвета Динамо Москва */
+    --dynamo-blue: #0055A4;
+    --dynamo-blue-light: #0073C9;
+    --dynamo-white: #FFFFFF;
+    --dynamo-red: #D71921;
+    --dynamo-gray: #F8FAFC;
+    --dynamo-dark: #003366;
+    --text-color: #2D3748;
+    --text-secondary: #4A5568;
+    
+    /* Функциональные цвета */
+    --primary-color: var(--dynamo-blue);
+    --secondary-color: var(--dynamo-blue-light);
+    --success-color: #28a745;
+    --danger-color: var(--dynamo-red);
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: var(--dynamo-gray);
+    --dark-color: #1A202C;
+    
+    /* Тени и скругления */
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 85, 164, 0.15);
+    --box-shadow-hover: 0 6px 20px rgba(0, 85, 164, 0.25);
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    background: var(--dynamo-white);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ===== ОБНОВЛЁННАЯ ШАПКА ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--dynamo-blue) 0%, var(--dynamo-dark) 100%);
+    color: var(--dynamo-white);
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo i {
+    color: var(--dynamo-red);
+    font-size: 22px;
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.btn-logout {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    transition: var(--transition);
+}
+
+.btn-logout:hover {
+    background: rgba(215,25,33,0.9);
+    border-color: white;
+    transform: translateY(-1px);
+}
+
+/* Навигация */
+.tabs {
+    display: flex;
+    background: var(--dynamo-gray);
+    border-bottom: 2px solid var(--dynamo-blue);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab {
+    flex: 1;
+    min-width: 120px;
+    padding: 16px 12px;
+    border: none;
+    background: none;
+    color: var(--dynamo-blue);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: var(--transition);
+    border-right: 1px solid rgba(0, 85, 164, 0.1);
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.tab.active {
+    background: var(--dynamo-white);
+    color: var(--dynamo-blue);
+    box-shadow: 0 -3px 0 var(--dynamo-red) inset;
+}
+
+.tab:hover:not(.active) {
+    background: rgba(0, 85, 164, 0.1);
+}
+
+.tab i {
+    font-size: 16px;
+}
+
+/* Основной контент */
+.tab-content {
+    display: none;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Карточки */
+.card {
+    background: var(--dynamo-white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.card h3 {
+    color: var(--dark-color);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 85, 164, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h3 i {
+    color: var(--dynamo-red);
+}
+
+/* Формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dynamo-blue);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--dynamo-white);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--dynamo-blue);
+    box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+/* Поиск сотрудников */
+.search-container {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dynamo-white);
+    border: 2px solid var(--dynamo-blue);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 85, 164, 0.1);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--dynamo-blue);
+    color: white;
+}
+
+.selected-item {
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(0, 85, 164, 0.1) 0%, rgba(0, 115, 201, 0.1) 100%);
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid var(--dynamo-blue);
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Чекбоксы */
+.checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px;
+    background: var(--dynamo-gray);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.checkbox-label:hover {
+    background: rgba(0, 85, 164, 0.1);
+}
+
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid var(--dynamo-blue);
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--dynamo-blue);
+    color: var(--dynamo-white);
+}
+
+.btn-primary:hover {
+    background: var(--dynamo-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 85, 164, 0.3);
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: var(--dynamo-white);
+}
+
+.btn-success:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: var(--dynamo-white);
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+/* Список тикетов */
+.tickets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.tickets-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tickets-list::-webkit-scrollbar-track {
+    background: var(--dynamo-gray);
+    border-radius: 3px;
+}
+
+.tickets-list::-webkit-scrollbar-thumb {
+    background: var(--dynamo-blue);
+    border-radius: 3px;
+}
+
+.ticket-item {
+    background: var(--dynamo-white);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--dynamo-blue);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    margin-bottom: 12px;
+}
+
+.ticket-item.done {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+    border-left: 4px solid var(--success-color);
+}
+
+.ticket-item.in-sn {
+    background: linear-gradient(135deg, #e3f2fd 0%, #e1f5fe 100%);
+    border-left: 4px solid var(--info-color);
+}
+
+.ticket-item.done.in-sn {
+    background: linear-gradient(135deg, #e8f5e9 0%, #e1f5fe 100%);
+    border-left: 4px solid var(--success-color);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.ticket-header-left {
+    display: flex;
+    flex-direction: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.ticket-actions .btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.ticket-date {
+    color: var(--dynamo-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.ticket-employee {
+    color: var(--text-secondary);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Контейнер задачи */
+.ticket-task-container {
+    margin: 15px 0;
+}
+
+.ticket-task-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dynamo-blue);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticket-task-container label i {
+    color: var(--dynamo-red);
+}
+
+.ticket-task {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.5;
+    min-height: 100px;
+    resize: vertical;
+    background: white;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    text-indent: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.ticket-task:focus {
+    outline: none;
+    border-color: var(--dynamo-blue);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ticket-task::placeholder {
+    color: rgba(0, 85, 164, 0.4);
+    font-style: italic;
+}
+
+.ticket-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.status-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-control label {
+    font-weight: 600;
+    color: var(--dynamo-blue);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-control select {
+    padding: 8px 10px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    background: var(--dynamo-white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.status-control select:focus {
+    border-color: var(--dynamo-blue);
+    box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
+}
+
+.status-control select.work-status {
+    border-color: var(--warning-color);
+}
+
+.status-control select.sn-status {
+    border-color: var(--info-color);
+}
+
+/* Состояние пустого списка */
+.empty-state {
+    text-align: center;
+    padding: 30px 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+    border-radius: 12px;
+    border: 2px dashed rgba(0, 85, 164, 0.2);
+    margin: 15px 0;
+}
+
+.empty-state i {
+    font-size: 36px;
+    color: var(--dynamo-blue);
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Кнопки сохранения изменений */
+.save-changes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(0, 85, 164, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.save-changes.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Фильтры */
+.filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: var(--dynamo-gray);
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+.filters input,
+.filters select {
+    padding: 10px 12px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--dynamo-white);
+}
+
+/* ===== СТАТИСТИКА ПО ТИКЕТАМ (НОВАЯ) ===== */
+.tickets-stats {
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-card .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dynamo-blue);
+    line-height: 1.2;
+}
+
+.stat-card .stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* ===== НОВЫЕ СТИЛИ ДЛЯ ГРУППИРОВКИ СОТРУДНИКОВ ===== */
+.employee-group {
+    margin-bottom: 12px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.employee-group-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, rgba(0,85,164,0.05) 0%, rgba(0,115,201,0.05) 100%);
+    border-radius: 6px;
+    margin-bottom: 6px;
+    border-left: 4px solid var(--dynamo-red);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.employee-group-header:hover {
+    background: linear-gradient(135deg, rgba(0,85,164,0.1) 0%, rgba(0,115,201,0.1) 100%);
+}
+
+.group-toggle-icon {
+    font-size: 12px;
+    color: var(--dynamo-blue);
+    width: 16px;
+    text-align: center;
+}
+
+.employee-group-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dynamo-blue);
+    text-transform: uppercase;
+}
+
+.group-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.employee-group-content {
+    padding-left: 12px;
+}
+
+.employee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition);
+    box-shadow: none;
+    cursor: default;
+}
+
+.employee-item:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #ebf8ff 100%);
+    border-color: rgba(0, 85, 164, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 85, 164, 0.08);
+}
+
+.employee-item span {
+    color: var(--dark-color);
+    font-size: 13px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.employee-actions {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    margin-left: 10px;
+}
+
+.employee-item:hover .employee-actions {
+    opacity: 1;
+    visibility: visible;
+}
+
+.employee-actions .btn-sm {
+    padding: 4px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* Управление сотрудниками */
+.add-employee {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border: 2px solid rgba(0, 85, 164, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 85, 164, 0.08);
+}
+
+.add-employee h4 {
+    color: var(--dark-color);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-employee h4 i {
+    color: var(--dynamo-red);
+    font-size: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 14px;
+    height: 46px;
+    border: 2px solid rgba(0, 85, 164, 0.25);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.form-row input:focus {
+    border-color: var(--dynamo-blue);
+    box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.15);
+}
+
+.form-row button {
+    height: 46px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 120px;
+}
+
+.employees-list {
+    background: var(--dynamo-white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border: 2px solid rgba(0, 85, 164, 0.1);
+    margin-bottom: 20px;
+}
+
+.employees-list h4 {
+    color: var(--dark-color);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--dynamo-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.employees-list h4 i {
+    color: var(--dynamo-blue);
+    font-size: 16px;
+}
+
+/* Управление пользователями */
+.users-management {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    border: 2px solid rgba(0, 85, 164, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 85, 164, 0.08);
+}
+
+.users-management h4 {
+    color: var(--dark-color);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.users-management h4 i {
+    color: var(--dynamo-red);
+    font-size: 16px;
+}
+
+/* Статистика администратора (старая, может остаться) */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dynamo-blue);
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+}
+
+/* Фильтры для пользователей */
+.users-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    background: var(--dynamo-gray);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.users-filters input,
+.users-filters select {
+    padding: 10px 12px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+.users-filters input:focus,
+.users-filters select:focus {
+    border-color: var(--dynamo-blue);
+    outline: none;
+}
+
+/* Стили для списка пользователей (обновлены) */
+.user-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    gap: 12px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: linear-gradient(135deg, var(--dynamo-blue) 0%, var(--dynamo-blue-light) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.user-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 14px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-username {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-details-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+}
+
+.user-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.user-status.admin {
+    background: rgba(215, 25, 33, 0.1);
+    color: var(--dynamo-red);
+}
+
+.user-status.user {
+    background: rgba(0, 85, 164, 0.1);
+    color: var(--dynamo-blue);
+}
+
+.user-status.requester {
+    background: rgba(255, 193, 7, 0.1);
+    color: #856404;
+}
+
+.user-telegram-id {
+    font-size: 10px;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.user-reg-date {
+    font-size: 10px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.user-tickets-count {
+    font-size: 10px;
+    color: var(--dynamo-blue);
+    margin-top: 2px;
+}
+
+.user-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.user-actions button {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 12px;
+    min-width: 0;
+}
+
+/* Форма добавления пользователя */
+.user-add-form {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+}
+
+.user-add-form h5 {
+    color: var(--dark-color);
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-add-form h5 i {
+    color: var(--dynamo-red);
+}
+
+.user-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.user-form-grid input,
+.user-form-grid select {
+    padding: 10px 12px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+.user-form-grid input:focus,
+.user-form-grid select:focus {
+    border-color: var(--dynamo-blue);
+    outline: none;
+}
+
+.user-form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.user-form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.user-form-checkbox label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dynamo-blue);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.user-form-checkbox i {
+    color: var(--dynamo-red);
+}
+
+.user-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.user-form-actions button {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Аутентификация */
+.auth-card {
+    background: var(--dynamo-white);
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+}
+
+.auth-card h2 {
+    color: var(--dynamo-blue);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.auth-card p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background: var(--dynamo-white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 350px;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background: var(--success-color);
+    color: var(--dynamo-white);
+    border-left: 4px solid #1e7e34;
+}
+
+.notification.error {
+    background: var(--danger-color);
+    color: var(--dynamo-white);
+    border-left: 4px solid #bd2130;
+}
+
+.notification.info {
+    background: var(--dynamo-blue);
+    color: var(--dynamo-white);
+    border-left: 4px solid var(--dynamo-dark);
+}
+
+.notification-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notification.success::before {
+    content: '✅ ';
+    margin-right: 8px;
+}
+
+.notification.error::before {
+    content: '❌ ';
+    margin-right: 8px;
+}
+
+.notification.info::before {
+    content: 'ℹ️ ';
+    margin-right: 8px;
+}
+
+/* Утилиты */
+.hidden {
+    display: none !important;
+}
+
+.hint {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.admin-only {
+    display: none;
+}
+
+/* Улучшение поиска сотрудников */
+.search-container {
+    position: relative;
+}
+
+#employee-search {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+#employee-search:focus {
+    border-color: var(--dynamo-blue);
+    box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
+    outline: none;
+}
+
+#selected-employee {
+    padding: 10px 12px;
+    background: linear-gradient(135deg, rgba(0, 85, 164, 0.08) 0%, rgba(0, 115, 201, 0.08) 100%);
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid var(--dynamo-blue);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideIn 0.3s ease;
+    font-size: 13px;
+}
+
+#selected-employee strong {
+    color: var(--dynamo-blue);
+    margin-right: 5px;
+}
+
+/* Сворачивание блока сотрудников */
+.employees-list.collapsed .add-employee,
+.employees-list.collapsed #employees-container {
+    display: none;
+}
+
+.employees-list.collapsed h4 {
+    margin-bottom: 0;
+    border-bottom: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.employees-list.collapsed h4 i {
+    color: var(--dynamo-red);
+}
+
+.employees-list h4 {
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.employees-list h4:hover {
+    opacity: 0.8;
+}
+
+.employees-list h4 i {
+    transition: transform 0.3s ease;
+}
+
+.employees-list.collapsed h4 i {
+    transform: rotate(-90deg);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 10px 15px;
+    }
+    
+    .user-menu {
+        align-items: flex-end;
+    }
+    
+    .username {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    
+    .btn-logout {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+    
+    .tabs {
+        position: relative;
+    }
+    
+    .tab {
+        min-width: 100px;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .tab-content {
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .filters {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ticket-status {
+        grid-template-columns: 1fr;
+    }
+    
+    .employee-item {
+        padding: 10px 12px;
+    }
+
+    .employee-actions .btn-sm {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .notification {
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+        width: calc(100% - 30px);
+    }
+    
+    .save-changes {
+        flex-direction: column;
+    }
+    
+    .ticket-task {
+        min-height: 100px;
+        font-size: 14px;
+    }
+    
+    .status-control {
+        width: 100%;
+    }
+    
+    .user-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .user-details {
+        text-align: center;
+    }
+    
+    .user-details-row {
+        justify-content: center;
+    }
+    
+    .user-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .user-add-form {
+        padding: 15px;
+    }
+    
+    .user-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .users-filters {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ticket-header {
+        flex-wrap: wrap;
+    }
+    
+    .ticket-header-left {
+        gap: 8px;
+    }
+    
+    .ticket-date,
+    .ticket-employee {
+        font-size: 12px;
+        white-space: normal;
+    }
+    
+    .ticket-actions .btn-sm {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .ticket-actions {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .users-filters {
+        grid-template-columns: 1fr auto;
+    }
+    
+    .user-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .user-actions {
+        width: auto;
+        flex-wrap: nowrap;
+    }
+    
+    .user-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ticket-status {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-task {
+        min-height: 80px;
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .empty-state {
+        padding: 30px 15px;
+        font-size: 14px;
+    }
+    
+    .empty-state i {
+        font-size: 36px;
+    }
+    
+    .user-item {
+        padding: 10px;
+    }
+    
+    .user-actions {
+        flex-direction: column;
+    }
+    
+    .user-actions button {
+        width: 100%;
+    }
+}
+
+/* Стили для статистики */
+.tickets-stats {
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-card .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dynamo-blue);
+    line-height: 1.2;
+}
+
+.stat-card .stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* Стили для статусов заявителей (уже есть, но уточним) */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-progress {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-done {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-sn {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-no-sn {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Для списка заявок в разделе админа */
+.ticket-actions select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid rgba(0, 85, 164, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    background: white;
+    margin-top: 10px;
+}
+
+.ticket-actions select:focus {
+    border-color: var(--dynamo-blue);
+    outline: none;
+}

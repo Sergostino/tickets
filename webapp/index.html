@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Учет тикетов</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header id="header">
+            <div class="logo">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Ticket Manager</span>
+            </div>
+            <div class="user-menu" id="user-menu">
+                <span id="username" class="username">Загрузка...</span>
+                <button id="logout-btn" class="btn btn-sm btn-logout" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i> Выход
+                </button>
+            </div>
+        </header>
+
+        <!-- Экран авторизации -->
+        <div id="auth-screen" class="screen">
+            <div class="auth-card">
+                <h2><i class="fas fa-lock"></i> Авторизация</h2>
+                <p>Для доступа к системе необходимо авторизоваться через Telegram</p>
+                <button id="auth-btn" class="btn btn-primary">
+                    <i class="fab fa-telegram"></i> Войти через Telegram
+                </button>
+                <p class="hint">Откройте это приложение через Telegram бота для автоматической авторизации</p>
+            </div>
+        </div>
+
+        <!-- Основной экран -->
+        <div id="main-screen" class="screen hidden">
+            <!-- Навигация -->
+            <nav class="tabs">
+                <button class="tab active" data-tab="add"><i class="fas fa-plus"></i> Новый тикет</button>
+                <button class="tab" data-tab="list"><i class="fas fa-list"></i> Мои тикеты</button>
+                <button class="tab admin-only" data-tab="requester-tickets"><i class="fas fa-inbox"></i> Заявки</button>
+                <button class="tab admin-only" data-tab="settings"><i class="fas fa-cog"></i> Управление</button>
+            </nav>
+
+            <!-- Вкладка: Добавление тикета -->
+            <div id="tab-add" class="tab-content active">
+                <div class="card">
+                    <h3><i class="fas fa-plus-circle"></i> <span id="add-title">Новый тикет</span></h3>
+                    <form id="ticket-form">
+                        <!-- Содержимое генерируется динамически в script.js -->
+                    </form>
+                </div>
+            </div>
+
+            <!-- Вкладка: Список тикетов -->
+            <div id="tab-list" class="tab-content">
+                <div class="card">
+                    <h3><i class="fas fa-history"></i> <span id="list-title">Мои тикеты</span></h3>
+                    <!-- Фильтры видны только IT-специалистам -->
+                    <div id="ticket-filters" class="filters admin-only">
+                        <input type="text" id="search-tickets" placeholder="Поиск по задачам...">
+                        <select id="filter-status">
+                            <option value="">Все статусы</option>
+                            <option value="pending">Ожидают выполнения</option>
+                            <option value="done">Выполнены</option>
+                            <option value="in_db">Внесены в SN</option>
+                        </select>
+                    </div>
+                    <div id="tickets-list" class="tickets-list"></div>
+                </div>
+            </div>
+
+            <!-- Вкладка: Заявки от заявителей (только для админа) -->
+            <div id="tab-requester-tickets" class="tab-content">
+                <div class="card">
+                    <h3><i class="fas fa-inbox"></i> Заявки от заявителей</h3>
+                    <div class="filters">
+                        <input type="text" id="search-requester-tickets" placeholder="Поиск по задачам...">
+                        <select id="filter-requester-status">
+                            <option value="all">Все статусы</option>
+                            <option value="pending">На рассмотрении</option>
+                            <option value="in_progress">В работе</option>
+                            <option value="done">Выполнено</option>
+                        </select>
+                    </div>
+                    <div id="requester-tickets-list" class="tickets-list"></div>
+                </div>
+            </div>
+
+            <!-- Вкладка: Управление (только для IT-админа) -->
+            <div id="tab-settings" class="tab-content">
+                <div class="card">
+                    <h3><i class="fas fa-users-cog"></i> Управление</h3>
+
+                    <!-- Новая статистика по тикетам -->
+                    <div class="tickets-stats admin-only">
+                        <h4><i class="fas fa-chart-bar"></i> Статистика по тикетам</h4>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="total-it-tickets">0</div>
+                                <div class="stat-label">IT-тикетов</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="total-requester-tickets">0</div>
+                                <div class="stat-label">Заявок от заявителей</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="done-tickets">0</div>
+                                <div class="stat-label">Выполнено</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="in-sn-tickets">0</div>
+                                <div class="stat-label">Внесено в SN</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="pending-requester-tickets">0</div>
+                                <div class="stat-label">На рассмотрении (заявители)</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="in-progress-requester-tickets">0</div>
+                                <div class="stat-label">В работе (заявители)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Управление пользователями (объединённое) -->
+                    <div class="users-management admin-only">
+                        <h4><i class="fas fa-user-shield"></i> Управление пользователями</h4>
+            
+                        <!-- Статистика по пользователям (можно оставить) -->
+                        <div class="admin-stats">
+                            <div class="stat-item">
+                                <div class="stat-value total-users">0</div>
+                                <div class="stat-label">Всего пользователей</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value total-admins">0</div>
+                                <div class="stat-label">Администраторов</div>
+                            </div>
+                        </div>
+            
+                        <!-- Фильтры -->
+                        <div class="users-filters">
+                            <input type="text" id="search-users" placeholder="Поиск по имени, username или ID...">
+                            <select id="user-status-filter">
+                                <option value="all">Все пользователи</option>
+                                <option value="it">Только IT-специалисты</option>
+                                <option value="admin">Только администраторы</option>
+                                <option value="requester">Только заявители</option>
+                            </select>
+                        </div>
+            
+                        <!-- Список пользователей -->
+                        <div id="users-container">
+                            <div class="empty-state">
+                                <i class="fas fa-spinner fa-spin"></i> Загрузка пользователей...
+                            </div>
+                        </div>
+            
+                        <!-- Форма добавления пользователя (оставляем без изменений) -->
+                        <div class="user-add-form">
+                            <h5><i class="fas fa-user-plus"></i> Добавить пользователя</h5>
+                            <div class="user-form-grid">
+                                <input type="text" id="new-user-telegram-id" 
+                                    placeholder="Telegram ID *">
+                                <input type="text" id="new-user-username" 
+                                    placeholder="Username (не обязательно)">
+                                <input type="text" id="new-user-first-name" 
+                                    placeholder="Имя *">
+                                <input type="text" id="new-user-last-name" 
+                                    placeholder="Фамилия (не обязательно)">
+                            </div>
+                            
+                            <div class="user-form-checkbox">
+                                <input type="checkbox" id="new-user-is-admin">
+                                <label for="new-user-is-admin">
+                                    <i class="fas fa-crown"></i> Администратор
+                                </label>
+                            </div>
+                            
+                            <div class="user-form-actions">
+                                <button id="add-user-btn" class="btn btn-success">
+                                    <i class="fas fa-plus"></i> Добавить пользователя
+                                </button>
+                            </div>
+                            
+                            <p class="hint" style="margin-top: 10px; font-size: 11px;">
+                                <i class="fas fa-info-circle"></i> Telegram ID можно получить через @userinfobot в Telegram
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Блок сотрудников (оставляем без изменений) -->
+                    <div class="add-employee admin-only">
+                        <h4><i class="fas fa-user-plus"></i> Добавить нового сотрудника</h4>
+                        <div class="form-row">
+                            <input type="text" id="new-employee" 
+                                placeholder="Фамилия Имя (например: Иванов Александр)">
+                            <button id="add-employee-btn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Добавить
+                            </button>
+                        </div>
+                        <p class="hint">Введите Фамилию и Имя, будет сохранено как "Фамилия И."</p>
+                    </div>
+
+                    <div class="employees-list admin-only">
+                        <h4><i class="fas fa-list"></i> Список сотрудников</h4>
+                        <div id="employees-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Уведомления -->
+        <div id="notification" class="notification hidden">
+            <span id="notification-text"></span>
+        </div>
+    </div>
+
+    <script src="auth.js?v=1.2"></script>
+    <script src="script.js?v=1.2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('date');
+            if (dateInput && !dateInput.value) {
+                dateInput.value = today;
+            }
+    
+            document.addEventListener('input', function(e) {
+                if (e.target.classList.contains('ticket-task')) {
+                    e.target.style.height = 'auto';
+                    e.target.style.height = (e.target.scrollHeight) + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
